@@ -1,5 +1,6 @@
 package com.example.finalspaceapi.navigation
 
+import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.runtime.Composable
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
@@ -9,6 +10,7 @@ import com.example.finalspaceapi.presentation.final_space_details.FinalSpaceDeta
 import com.example.finalspaceapi.presentation.final_space_list.FinalSpaceListViewModel
 import com.example.finalspaceapi.presentation.final_space_list.FinalSpaceScreen
 
+@ExperimentalMaterialApi
 @Composable
 fun SetupNavGraph(
     navController: NavHostController,
@@ -19,12 +21,12 @@ fun SetupNavGraph(
         startDestination = Screen.SpaceListScreen.route
     ) {
         composable(route = Screen.SpaceListScreen.route) {
-            FinalSpaceScreen(viewModel,navController)
+            FinalSpaceScreen(viewModel, navController)
         }
         composable(
             route = Screen.FinalSpaceDetailsScreen.route + "/{id}"
         ) {
-            FinalSpaceDetailsScreen()
+            FinalSpaceDetailsScreen(navController)
         }
     }
 }

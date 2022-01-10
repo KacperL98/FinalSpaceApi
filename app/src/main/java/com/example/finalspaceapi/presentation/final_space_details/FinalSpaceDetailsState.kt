@@ -5,6 +5,6 @@ import com.example.finalspaceapi.data.remote.dto.DetailsCharacter
 
 data class FinalSpaceDetailsState(
     val isLoading: Boolean = false,
-    val finalSpaceDetails: DetailsCharacter? = null,
+    val detailsCharacter: DetailsCharacter? = null,
     val error: String = ""
 )

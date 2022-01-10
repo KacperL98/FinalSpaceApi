@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.finalspaceapi.common.Constants
 import com.example.finalspaceapi.common.Resource
-import com.example.finalspaceapi.domain.use_case.get_details_character.GetDetailsItemCharacter
+import com.example.finalspaceapi.domain.use_case.get_details_character.GetCharacterDetails
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
@@ -15,19 +15,16 @@ import javax.inject.Inject
 
 @HiltViewModel
 class FinalSpaceDetailViewModel @Inject constructor(
-    private val getDetailsItemCharacter: GetDetailsItemCharacter,
+    private val getDetailsItemCharacter: GetCharacterDetails,
     savedStateHandle: SavedStateHandle
 ) : ViewModel() {
 
     private val _state = mutableStateOf(FinalSpaceDetailsState())
     val state: State<FinalSpaceDetailsState> = _state
-    var someValue = "123"
-
-    var intValue: Int = someValue.toInt() //this code will work for this
 
     init {
         savedStateHandle.get<String>(Constants.ID_CHARACTER)?.let {
-            getCoin(intValue)
+            getCoin(it.toInt())
         }
     }
 
@@ -35,7 +32,7 @@ class FinalSpaceDetailViewModel @Inject constructor(
         getDetailsItemCharacter(id).onEach { result ->
             when (result) {
                 is Resource.Success -> {
-                    _state.value = FinalSpaceDetailsState(finalSpaceDetails = result.data)
+                    _state.value = FinalSpaceDetailsState(detailsCharacter = result.data)
                 }
                 is Resource.Error -> {
                     _state.value = FinalSpaceDetailsState(

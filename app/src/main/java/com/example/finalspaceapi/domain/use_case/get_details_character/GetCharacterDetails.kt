@@ -9,7 +9,7 @@ import retrofit2.HttpException
 import java.io.IOException
 import javax.inject.Inject
 
-class GetDetailsItemCharacter @Inject constructor(
+class GetCharacterDetails @Inject constructor(
     private val repository: FinalSpaceRepository
 ) {
     operator fun invoke(id: Int): Flow<Resource<DetailsCharacter>> = flow {

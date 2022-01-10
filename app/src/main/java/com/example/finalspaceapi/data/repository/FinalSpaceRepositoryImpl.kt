@@ -9,6 +9,7 @@ import javax.inject.Inject
 class FinalSpaceRepositoryImpl @Inject constructor(
     private val api: FinalSpaceApi
 ) : FinalSpaceRepository {
+
     override suspend fun getFinalSpaceList(): List<FinalSpaceItemDto> {
         return api.getFinalSpaceList()
     }
@@ -16,5 +17,4 @@ class FinalSpaceRepositoryImpl @Inject constructor(
     override suspend fun getCharacterDetails(id: Int): DetailsCharacter {
         return api.getCharacterDetails(id)
     }
-
 }
