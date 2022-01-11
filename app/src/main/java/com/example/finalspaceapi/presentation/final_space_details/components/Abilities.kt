@@ -31,5 +31,6 @@ fun Abilities(
             style = MaterialTheme.typography.body2,
             fontStyle = FontStyle.Italic
         )
+
     }
 }
