@@ -13,7 +13,7 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 fun Abilities(
-    tag: String
+    abilities: String
 ) {
     Box(
         modifier = Modifier
@@ -26,11 +26,10 @@ fun Abilities(
             .padding(10.dp)
     ) {
         Text(
-            text = tag
+            text = abilities
                 .replace("[\\[\\]^,\"]+".toRegex(), "\n"),
             style = MaterialTheme.typography.body2,
             fontStyle = FontStyle.Italic
         )
-
     }
 }

@@ -130,7 +130,7 @@ internal fun CollapsingToolbar(detailsCharacter: DetailsCharacter, navController
                         .fillMaxSize()
                 ) {
                     items(detailsCharacter.abilities) {
-                        Abilities(tag = it)
+                        Abilities(abilities = it)
                     }
                 }
             }
