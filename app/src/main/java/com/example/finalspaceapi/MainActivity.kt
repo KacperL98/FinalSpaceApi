@@ -11,9 +11,8 @@ import androidx.compose.material.Surface
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.navigation.compose.rememberNavController
-import com.example.SplashViewModel
 import com.example.finalspaceapi.navigation.SetupNavGraph
-import com.example.finalspaceapi.presentation.final_space_list.FinalSpaceListViewModel
+import com.example.finalspaceapi.presentation.SplashViewModel
 import com.example.finalspaceapi.ui.theme.FinalSpaceApiTheme
 import dagger.hilt.android.AndroidEntryPoint
 
