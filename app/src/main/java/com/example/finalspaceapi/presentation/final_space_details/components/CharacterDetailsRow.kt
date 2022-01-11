@@ -12,6 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import com.example.finalspaceapi.ui.spacing
 
 @Composable
 fun CharacterDetailsRow(
@@ -23,7 +24,7 @@ fun CharacterDetailsRow(
     Row(
         modifier = Modifier
             .fillMaxSize()
-            .padding(4.dp),
+            .padding(MaterialTheme.spacing.extraSmall),
         verticalAlignment = Alignment.CenterVertically,
     ) {
         Text(

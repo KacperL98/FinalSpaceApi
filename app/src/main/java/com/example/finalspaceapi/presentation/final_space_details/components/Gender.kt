@@ -11,9 +11,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.example.finalspaceapi.R
 import com.example.finalspaceapi.data.remote.dto.DetailsCharacter
+import com.example.finalspaceapi.ui.spacing
 
 @Composable
 fun GenderText(detailsCharacter: DetailsCharacter) {
@@ -30,16 +32,16 @@ fun GenderText(detailsCharacter: DetailsCharacter) {
 }
 @Composable
 fun GenderImage(detailsCharacter: DetailsCharacter) {
-    val isMale = detailsCharacter.gender.lowercase() == "male"
-    val isFemale = detailsCharacter.gender.lowercase() == "female"
+    val isMale = detailsCharacter.gender.lowercase() == stringResource(id = R.string.male)
+    val isFemale = detailsCharacter.gender.lowercase() == stringResource(id = R.string.female)
     Row(
         modifier = Modifier
             .fillMaxSize()
-            .padding(4.dp, 2.dp),
+            .padding(MaterialTheme.spacing.extraSmall, MaterialTheme.spacing.default),
         horizontalArrangement = Arrangement.End
     ) {
         Image(
-            modifier = Modifier.padding(4.dp),
+            modifier = Modifier.padding(MaterialTheme.spacing.extraSmall),
             painter = painterResource(
                 id = when {
                     isMale -> R.drawable.ic_baseline_male_24

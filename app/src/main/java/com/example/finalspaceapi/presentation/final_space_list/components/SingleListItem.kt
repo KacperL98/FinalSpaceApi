@@ -15,8 +15,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import com.example.finalspaceapi.R
 import com.example.finalspaceapi.data.remote.dto.FinalSpaceItemDto
 import com.example.finalspaceapi.ui.spacing
 import com.skydoves.landscapist.CircularReveal
@@ -69,24 +71,24 @@ fun ImageCharacter(finalSpaceItemDto: FinalSpaceItemDto) {
 
 @Composable
 fun ShortDescriptionCharacter(finalSpaceItemDto: FinalSpaceItemDto) {
-    val isAlive = finalSpaceItemDto.status.lowercase() == "alive"
-    val isDeceased = finalSpaceItemDto.status.lowercase() == "deceased"
+    val isAlive = finalSpaceItemDto.status.lowercase() == stringResource(id = R.string.alive)
+    val isDeceased = finalSpaceItemDto.status.lowercase() == stringResource(id = R.string.deceased)
 
     Column(
         modifier = Modifier
             .fillMaxHeight()
-            .padding(PaddingValues(16.dp)),
+            .padding(PaddingValues(MaterialTheme.spacing.medium)),
         verticalArrangement = Arrangement.Top,
     ) {
         Text(finalSpaceItemDto.name, fontWeight = FontWeight.Bold)
         Row(
-            modifier = Modifier.padding(5.dp),
+            modifier = Modifier.padding(MaterialTheme.spacing.extraSmall),
             verticalAlignment = Alignment.CenterVertically
         ) {
             Box(
                 modifier = Modifier
-                    .padding(5.dp)
-                    .size(10.dp)
+                    .padding(MaterialTheme.spacing.extraSmall)
+                    .size(MaterialTheme.spacing.small)
                     .clip(CircleShape)
                     .background(
                         when {

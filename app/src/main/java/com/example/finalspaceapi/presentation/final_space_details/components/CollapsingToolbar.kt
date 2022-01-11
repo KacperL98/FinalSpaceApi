@@ -17,6 +17,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
@@ -65,7 +66,7 @@ internal fun CollapsingToolbar(detailsCharacter: DetailsCharacter, navController
             Image(
                 modifier = Modifier
                     .pin()
-                    .padding(16.dp)
+                    .padding(MaterialTheme.spacing.medium)
                     .clickable { navController.navigate(Screen.SpaceListScreen.route) },
                 painter = painterResource(id = R.drawable.ic_baseline_arrow_back_24),
                 contentDescription = null
@@ -96,13 +97,13 @@ internal fun CollapsingToolbar(detailsCharacter: DetailsCharacter, navController
             }
             item {
                 CharacterDetailsRow(
-                    label = "Status",
+                    label = stringResource(id = R.string.status),
                     separator = {
                         StatusInformation(detailsCharacter)
                     }
                 )
                 CharacterDetailsRow(
-                    label = "Gender",
+                    label = stringResource(id = R.string.gender),
                     separator = {
                         GenderText(detailsCharacter)
                     }
@@ -112,11 +113,11 @@ internal fun CollapsingToolbar(detailsCharacter: DetailsCharacter, navController
             item {
 
                 CharacterDetailsRow(
-                    label = "Abilities",
+                    label = stringResource(id = R.string.abilities),
                     separator = {
                         Image(
                             modifier = Modifier
-                                .padding(8.dp)
+                                .padding(MaterialTheme.spacing.small)
                                 .clickable { navController.navigate(Screen.SpaceListScreen.route) },
                             painter = painterResource(id = R.drawable.ic_baseline_star_24),
                             contentDescription = null
@@ -124,7 +125,7 @@ internal fun CollapsingToolbar(detailsCharacter: DetailsCharacter, navController
                     }
                 )
 
-                Spacer(modifier = Modifier.height(15.dp))
+                Spacer(modifier = Modifier.height(MaterialTheme.spacing.medium))
                 LazyRow(
                     modifier = Modifier
                         .fillMaxSize()

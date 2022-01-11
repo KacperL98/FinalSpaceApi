@@ -10,6 +10,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.unit.dp
+import com.example.finalspaceapi.ui.spacing
 
 @Composable
 fun Abilities(
@@ -17,11 +18,11 @@ fun Abilities(
 ) {
     Box(
         modifier = Modifier
-            .padding(5.dp)
+            .padding(MaterialTheme.spacing.extraSmall)
             .border(
-                width = 1.dp,
+                width = MaterialTheme.spacing.default,
                 color = MaterialTheme.colors.primary,
-                shape = RoundedCornerShape(100.dp)
+                shape = RoundedCornerShape(MaterialTheme.spacing.othersX)
             )
             .padding(10.dp)
     ) {

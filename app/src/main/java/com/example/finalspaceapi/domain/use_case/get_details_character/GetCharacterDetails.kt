@@ -1,5 +1,6 @@
 package com.example.finalspaceapi.domain.use_case.get_details_character
 
+import android.content.Context
 import com.example.finalspaceapi.common.Resource
 import com.example.finalspaceapi.data.remote.dto.DetailsCharacter
 import com.example.finalspaceapi.domain.repsoitory.FinalSpaceRepository
