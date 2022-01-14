@@ -22,7 +22,7 @@ fun Abilities(
             .border(
                 width = MaterialTheme.spacing.default,
                 color = MaterialTheme.colors.primary,
-                shape = RoundedCornerShape(MaterialTheme.spacing.othersX)
+                shape = RoundedCornerShape(MaterialTheme.spacing.spacingOthersXX)
             )
             .padding(10.dp)
     ) {
