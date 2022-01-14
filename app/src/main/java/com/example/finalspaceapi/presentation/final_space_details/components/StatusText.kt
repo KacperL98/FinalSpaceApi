@@ -33,7 +33,7 @@ fun StatusInformation(detailsCharacter: DetailsCharacter) {
             Box(
                 modifier = Modifier
                     .padding(MaterialTheme.spacing.extraSmall)
-                    .size(MaterialTheme.spacing.extraSmall)
+                    .size(MaterialTheme.spacing.small)
                     .clip(CircleShape)
                     .background(
                         when {

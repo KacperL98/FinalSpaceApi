@@ -46,7 +46,7 @@ internal fun CollapsingToolbar(detailsCharacter: DetailsCharacter, navController
                 modifier = Modifier
                     .background(MaterialTheme.colors.primary)
                     .fillMaxWidth()
-                    .height(MaterialTheme.spacing.othersX)
+                    .height(MaterialTheme.spacing.spacingOthersXX)
                     .pin()
             )
             Text(
@@ -54,7 +54,7 @@ internal fun CollapsingToolbar(detailsCharacter: DetailsCharacter, navController
                 modifier = Modifier
                     .road(Alignment.CenterStart, Alignment.BottomEnd)
                     .padding(
-                        MaterialTheme.spacing.others,
+                        MaterialTheme.spacing.spacingOthersX,
                         MaterialTheme.spacing.medium,
                         MaterialTheme.spacing.medium,
                         MaterialTheme.spacing.medium

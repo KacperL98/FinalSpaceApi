@@ -17,7 +17,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.unit.dp
 import com.example.finalspaceapi.R
 import com.example.finalspaceapi.data.remote.dto.FinalSpaceItemDto
 import com.example.finalspaceapi.ui.spacing
@@ -58,7 +57,7 @@ fun ImageCharacter(finalSpaceItemDto: FinalSpaceItemDto) {
     Card(
         shape = RoundedCornerShape(MaterialTheme.spacing.large),
         modifier = Modifier
-            .size(MaterialTheme.spacing.extraLargeX),
+            .size(MaterialTheme.spacing.imageSize),
         elevation = MaterialTheme.spacing.small
     ) {
         GlideImage(
