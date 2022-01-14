@@ -24,11 +24,11 @@ class FinalSpaceDetailViewModel @Inject constructor(
 
     init {
         savedStateHandle.get<String>(Constants.ID_CHARACTER)?.let {
-            getCoin(it.toInt())
+            getDetailsCharacter(it.toInt())
         }
     }
 
-    private fun getCoin(id: Int) {
+    private fun getDetailsCharacter(id: Int) {
         getDetailsItemCharacter(id).onEach { result ->
             when (result) {
                 is Resource.Success -> {

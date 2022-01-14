@@ -21,10 +21,10 @@ class FinalSpaceListViewModel @Inject constructor(
     val state: State<FinalSpaceListState> = _state
 
     init {
-        getCoins()
+        getListCharacter()
     }
 
-    private fun getCoins() {
+    private fun getListCharacter() {
         getSingleItem().onEach { result ->
             when (result) {
                 is Resource.Success -> {

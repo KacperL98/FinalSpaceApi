@@ -16,8 +16,8 @@ class GetCharacterDetails @Inject constructor(
     operator fun invoke(id: Int): Flow<Resource<DetailsCharacter>> = flow {
         try {
             emit(Resource.Loading<DetailsCharacter>())
-            val coin = repository.getCharacterDetails(id)
-            emit(Resource.Success<DetailsCharacter>(coin))
+            val characterDetails = repository.getCharacterDetails(id)
+            emit(Resource.Success<DetailsCharacter>(characterDetails))
         } catch (e: HttpException) {
             emit(
                 Resource.Error<DetailsCharacter>(

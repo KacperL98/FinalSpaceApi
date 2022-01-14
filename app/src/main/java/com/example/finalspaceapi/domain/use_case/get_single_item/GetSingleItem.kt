@@ -16,8 +16,8 @@ class GetSingleItem @Inject constructor(
     operator fun invoke(): Flow<Resource<List<FinalSpaceItemDto>>> = flow {
         try {
             emit(Resource.Loading<List<FinalSpaceItemDto>>())
-            val coins = repository.getFinalSpaceList()
-            emit(Resource.Success<List<FinalSpaceItemDto>>(coins))
+            val character = repository.getFinalSpaceList()
+            emit(Resource.Success<List<FinalSpaceItemDto>>(character))
         } catch (e: HttpException) {
             emit(
                 Resource.Error<List<FinalSpaceItemDto>>(
