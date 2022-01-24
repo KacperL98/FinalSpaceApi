@@ -8,4 +8,5 @@
     <string name="female">female</string>
     <string name="alive">alive</string>
     <string name="deceased">deceased</string>
+    <string name="offline_connection">You are offline, check your connection Internet</string>
 </resources>

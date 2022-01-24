@@ -14,9 +14,12 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.example.finalspaceapi.navigation.Screen
+import com.example.finalspaceapi.presentation.final_space_list.components.ConnectivityStatus
 import com.example.finalspaceapi.presentation.final_space_list.components.SingleListItem
 import com.example.finalspaceapi.ui.spacing
+import kotlinx.coroutines.InternalCoroutinesApi
 
+@InternalCoroutinesApi
 @Composable
 fun FinalSpaceScreen(
     viewModel: FinalSpaceListViewModel = hiltViewModel(),
@@ -33,6 +36,9 @@ fun FinalSpaceScreen(
                 .fillMaxSize()
                 .padding(MaterialTheme.spacing.medium)
         ) {
+            item {
+                ConnectivityStatus()
+            }
             items(state.finalSpace) { finalSpaceItem ->
                 SingleListItem(finalSpaceItemDto = finalSpaceItem,
                     onItemClick = {
