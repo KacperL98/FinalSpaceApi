@@ -5,4 +5,6 @@ sealed class Screen(val route: String) {
     object SpaceListScreen : Screen("coin_list_screen")
 
     object FinalSpaceDetailsScreen : Screen("final_space_detail_screen")
+
+    object SettingsScreen : Screen("settings_screen")
 }

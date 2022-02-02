@@ -9,4 +9,13 @@
     <string name="alive">alive</string>
     <string name="deceased">deceased</string>
     <string name="offline_connection">You are offline, check your connection Internet</string>
+    <string name="back">Back</string>
+    <string name="select_theme">Select theme</string>
+    <string name="light">Light</string>
+    <string name="dark">Dark</string>
+    <string name="auto">Auto</string>
+    <string name="final_space">Final space</string>
+
+
+
 </resources>

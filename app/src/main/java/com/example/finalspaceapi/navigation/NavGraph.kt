@@ -9,12 +9,19 @@ import androidx.navigation.compose.composable
 import com.example.finalspaceapi.presentation.final_space_details.FinalSpaceDetailsScreen
 import com.example.finalspaceapi.presentation.final_space_list.FinalSpaceListViewModel
 import com.example.finalspaceapi.presentation.final_space_list.FinalSpaceScreen
+import com.example.finalspaceapi.presentation.final_space_settings.SettingsScreen
+import com.example.finalspaceapi.presentation.final_space_settings.preferences.UserSettings
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.InternalCoroutinesApi
 
+@ExperimentalCoroutinesApi
+@InternalCoroutinesApi
 @ExperimentalMaterialApi
 @Composable
 fun SetupNavGraph(
     navController: NavHostController,
     viewModel: FinalSpaceListViewModel = hiltViewModel(),
+    userSettings: UserSettings
 ) {
     NavHost(
         navController = navController,
@@ -22,6 +29,10 @@ fun SetupNavGraph(
     ) {
         composable(route = Screen.SpaceListScreen.route) {
             FinalSpaceScreen(viewModel, navController)
+        }
+
+        composable(route = Screen.SettingsScreen.route) {
+            SettingsScreen(userSettings,navController)
         }
         composable(
             route = Screen.FinalSpaceDetailsScreen.route + "/{id}"
