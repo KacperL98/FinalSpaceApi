@@ -10,6 +10,8 @@ import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
@@ -22,6 +24,8 @@ import com.example.finalspaceapi.presentation.common_extensions.TopAppBarWithIco
 import com.example.finalspaceapi.presentation.final_space_list.components.ConnectivityStatus
 import com.example.finalspaceapi.presentation.final_space_list.components.SingleListItem
 import com.example.finalspaceapi.ui.spacing
+import com.google.accompanist.swiperefresh.SwipeRefresh
+import com.google.accompanist.swiperefresh.rememberSwipeRefreshState
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.InternalCoroutinesApi
 
@@ -33,6 +37,7 @@ fun FinalSpaceScreen(
     navController: NavController
 ) {
     val state = viewModel.state.value
+    val isRefreshing by viewModel.isRefreshing.collectAsState()
 
     Scaffold(
         modifier = Modifier
@@ -45,20 +50,25 @@ fun FinalSpaceScreen(
             )
         },
     ) {
-        LazyColumn(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(MaterialTheme.spacing.extraSmall)
+        SwipeRefresh(
+            state = rememberSwipeRefreshState(isRefreshing),
+            onRefresh = { viewModel.refresh() },
         ) {
-            item {
-                ConnectivityStatus()
-            }
-            items(state.finalSpace) { finalSpaceItem ->
-                SingleListItem(finalSpaceItemDto = finalSpaceItem,
-                    onItemClick = {
-                        navController.navigate(Screen.FinalSpaceDetailsScreen.route + "/${finalSpaceItem.id}")
-                    })
-                Spacer(modifier = Modifier.padding(MaterialTheme.spacing.small))
+            LazyColumn(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(MaterialTheme.spacing.extraSmall)
+            ) {
+                item {
+                    ConnectivityStatus()
+                }
+                items(state.finalSpace) { finalSpaceItem ->
+                    SingleListItem(finalSpaceItemDto = finalSpaceItem,
+                        onItemClick = {
+                            navController.navigate(Screen.FinalSpaceDetailsScreen.route + "/${finalSpaceItem.id}")
+                        })
+                    Spacer(modifier = Modifier.padding(MaterialTheme.spacing.small))
+                }
             }
         }
         if (state.error.isNotBlank()) {
