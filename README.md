@@ -13,5 +13,5 @@ The entire project was written in Android jetpack compose.
 
 # Video
 
-https://user-images.githubusercontent.com/75754448/167478977-486d3eb9-86eb-4946-9614-96a41a03ecad.mp4
+https://user-images.githubusercontent.com/75754448/167479310-1cf96b5f-4ad1-41ad-9c5b-43ad54f86ff5.mp4
 
